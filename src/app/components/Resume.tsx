@@ -70,14 +70,18 @@ export default function Resume() {
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] backdrop-blur-sm">
+        <div className="hidden overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] backdrop-blur-sm md:block">
           <iframe
             title="Adam Soong CV"
             src={resumeUrl}
             className="h-[65vh] w-full sm:h-[70vh]"
           />
         </div>
-        <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
+        <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-sm leading-relaxed text-[color:var(--text-muted)] backdrop-blur-sm md:hidden">
+          The inline preview works best on a larger screen. On mobile, use the buttons above to
+          open the CV in a new tab or download it.
+        </div>
+        <p className="mt-4 hidden text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)] md:block">
           If the preview does not load, use the download button above.
         </p>
       </div>

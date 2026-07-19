@@ -70,7 +70,7 @@ const floatingCards = [
 
 const stats = [
   { value: "2+", label: "Years Learning AI" },
-  { value: "1", label: "Active Project" },
+  { value: "3", label: "Projects Built" },
   { value: "8", label: "Certifications Earned" },
 ]
 
@@ -143,6 +143,7 @@ export default function Home() {
   const floatY = useTransform(y, (value) => value * 0.6)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0, width: 0, height: 0 })
   const [copied, setCopied] = useState(false)
+  const [emailOpen, setEmailOpen] = useState(false)
 
   useEffect(() => {
     const updateSize = () => {
@@ -210,7 +211,7 @@ export default function Home() {
       </div>
 
       <div className="vt-content relative z-10 mx-auto max-w-7xl px-5 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-32">
-        <div className="relative pb-12 sm:pb-16" style={{ minHeight: "65vh" }}>
+        <div className="relative pb-12 sm:pb-16 lg:min-h-[65vh]">
           <div className="hidden lg:block">
             {floatingCards.map((card) => {
               const Icon = card.icon
@@ -323,14 +324,22 @@ export default function Home() {
               <div className="group relative">
                 <motion.button
                   whileHover={{ scale: 1.1, y: -3 }}
+                  onClick={() => setEmailOpen((prev) => !prev)}
                   className="flex items-center justify-center rounded-full border border-[color:var(--border)] p-3 text-[color:var(--text)] backdrop-blur-sm transition hover:border-[color:var(--border-strong)] hover:bg-[color:var(--surface-hover)]"
                   aria-label="Email options"
+                  aria-expanded={emailOpen}
                   type="button"
                 >
                   <Mail size={20} />
                 </motion.button>
 
-                <div className="pointer-events-none absolute right-0 top-10 w-60 origin-top-right translate-y-2 rounded-2xl border border-[color:var(--border)] bg-[color:var(--nav)] p-2 opacity-0 shadow-lg backdrop-blur-lg transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 before:absolute before:-top-4 before:left-0 before:h-4 before:w-full before:content-['']">
+                <div
+                  className={`absolute right-0 top-10 w-60 origin-top-right rounded-2xl border border-[color:var(--border)] bg-[color:var(--nav)] p-2 shadow-lg backdrop-blur-lg transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 before:absolute before:-top-4 before:left-0 before:h-4 before:w-full before:content-[''] ${
+                    emailOpen
+                      ? "pointer-events-auto translate-y-0 opacity-100"
+                      : "pointer-events-none translate-y-2 opacity-0"
+                  }`}
+                >
                   <button
                     type="button"
                     onClick={handleCopyEmail}

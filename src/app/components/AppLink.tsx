@@ -7,7 +7,7 @@ type AppLinkProps = LinkProps & {
 }
 
 const getRouteOrder = (path: string) => {
-  if (path.startsWith("/projects/borrowbuddy")) return 2
+  if (path.startsWith("/projects/")) return 2
   if (path.startsWith("/projects")) return 1
   if (path.startsWith("/education")) return 3
   if (path.startsWith("/certifications")) return 4
