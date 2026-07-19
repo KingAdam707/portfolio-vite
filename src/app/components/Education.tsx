@@ -107,9 +107,9 @@ export default function Education() {
             return (
             <div key={item.degree} className="relative flex gap-6">
               {index !== education.length - 1 ? (
-                <div className="absolute left-[23px] top-16 h-full w-px bg-gradient-to-b from-[color:var(--border-strong)] to-transparent" />
+                <div className="absolute left-[23px] top-16 hidden h-full w-px bg-gradient-to-b from-[color:var(--border-strong)] to-transparent sm:block" />
               ) : null}
-              <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="relative">
+              <motion.div whileHover={{ scale: 1.1, rotate: 5 }} className="relative hidden sm:block">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[color:var(--border-strong)] bg-[color:var(--surface)]">
                   <Icon size={20} className="text-[color:var(--text)]" />
                 </div>

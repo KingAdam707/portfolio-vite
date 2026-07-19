@@ -7,6 +7,8 @@ import Certifications from "./components/Certifications"
 import Resume from "./components/Resume"
 import NotFound from "./components/NotFound"
 import BorrowBuddy from "./components/BorrowBuddy"
+import MunchMatch from "./components/MunchMatch"
+import QuickQR from "./components/QuickQR"
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "projects", element: <Projects /> },
       { path: "projects/borrowbuddy", element: <BorrowBuddy /> },
+      { path: "projects/munchmatch", element: <MunchMatch /> },
+      { path: "projects/quickqr", element: <QuickQR /> },
       { path: "education", element: <Education /> },
       { path: "certifications", element: <Certifications /> },
       { path: "resume", element: <Resume /> },

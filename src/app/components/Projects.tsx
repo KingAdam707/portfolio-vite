@@ -1,9 +1,41 @@
 import { useState } from "react"
 import { motion } from "motion/react"
-import { ExternalLink, Github } from "lucide-react"
+import { BookOpen, ExternalLink, Github } from "lucide-react"
 import AppLink from "./AppLink"
 
-const projects = [
+type Project = {
+  title: string
+  description: string
+  tags: string[]
+  image: string
+  github: string
+  live?: string
+  caseStudy?: string
+}
+
+const projects: Project[] = [
+  {
+    title: "QuickQR",
+    description:
+      "Paste a link, get a big scannable QR code instantly. A zero-backend web tool for handing someone a URL across the room — no app needed to scan.",
+    tags: ["JavaScript", "Client-Side", "Static Web App", "QR Codes"],
+    image:
+      "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?q=80&w=1200&auto=format&fit=crop",
+    github: "https://github.com/KingAdam707/quickqr",
+    live: "https://kingadam707.github.io/quickqr/",
+    caseStudy: "/projects/quickqr",
+  },
+  {
+    title: "MunchMatch",
+    description:
+      "A real-time multiplayer restaurant-voting app — describe the vibe, AI finds restaurants, and the group swipes until everyone agrees on where to eat.",
+    tags: ["Next.js", "TypeScript", "Firestore", "GPT-4o-mini"],
+    image:
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop",
+    github: "https://github.com/KingAdam707/MunchMatch",
+    live: "https://munch-match-two.vercel.app",
+    caseStudy: "/projects/munchmatch",
+  },
   {
     title: "BorrowBuddy (Android)",
     description:
@@ -12,7 +44,7 @@ const projects = [
     image:
       "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop",
     github: "https://github.com/KingAdam707/BorrowBuddy",
-    live: "/projects/borrowbuddy",
+    caseStudy: "/projects/borrowbuddy",
   },
 ]
 
@@ -91,25 +123,41 @@ export default function Projects() {
                 <motion.div
                   animate={{ opacity: hoveredProject === index ? 1 : 0 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="absolute inset-0 flex items-center justify-center gap-4 bg-black/70 backdrop-blur-sm"
+                  className="absolute inset-0 hidden items-center justify-center gap-4 bg-black/70 backdrop-blur-sm md:flex"
                 >
                   <motion.a
                     href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
                     whileHover={{ scale: 1.1 }}
                     className="rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
                     aria-label={`${project.title} on GitHub`}
                   >
                     <Github size={18} />
                   </motion.a>
-                  <motion.div whileHover={{ scale: 1.1 }}>
-                    <AppLink
-                      to={project.live}
+                  {project.live ? (
+                    <motion.a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      whileHover={{ scale: 1.1 }}
                       className="flex items-center justify-center rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
-                      aria-label={`${project.title} case study`}
+                      aria-label={`${project.title} live site`}
                     >
                       <ExternalLink size={18} />
-                    </AppLink>
-                  </motion.div>
+                    </motion.a>
+                  ) : null}
+                  {project.caseStudy ? (
+                    <motion.div whileHover={{ scale: 1.1 }}>
+                      <AppLink
+                        to={project.caseStudy}
+                        className="flex items-center justify-center rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
+                        aria-label={`${project.title} case study`}
+                      >
+                        <BookOpen size={18} />
+                      </AppLink>
+                    </motion.div>
+                  ) : null}
                 </motion.div>
               </div>
               <div className="space-y-4 p-5 sm:p-6">
@@ -126,6 +174,34 @@ export default function Projects() {
                       {tag}
                     </span>
                   ))}
+                </div>
+                <div className="flex flex-wrap gap-2 pt-1 md:hidden">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] px-4 py-2 text-xs uppercase tracking-[0.2em] text-[color:var(--text)] transition hover:border-[color:var(--border-strong)] hover:bg-[color:var(--surface-hover)]"
+                  >
+                    <Github size={14} /> Code
+                  </a>
+                  {project.live ? (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] px-4 py-2 text-xs uppercase tracking-[0.2em] text-[color:var(--text)] transition hover:border-[color:var(--border-strong)] hover:bg-[color:var(--surface-hover)]"
+                    >
+                      <ExternalLink size={14} /> Live
+                    </a>
+                  ) : null}
+                  {project.caseStudy ? (
+                    <AppLink
+                      to={project.caseStudy}
+                      className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] px-4 py-2 text-xs uppercase tracking-[0.2em] text-[color:var(--text)] transition hover:border-[color:var(--border-strong)] hover:bg-[color:var(--surface-hover)]"
+                    >
+                      <BookOpen size={14} /> Details
+                    </AppLink>
+                  ) : null}
                 </div>
               </div>
             </motion.div>

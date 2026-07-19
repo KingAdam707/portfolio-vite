@@ -159,8 +159,9 @@ export default function Certifications() {
                 <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
                   <Calendar size={14} /> {cert.date}
                 </span>
-                <span className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
-                  <CheckCircle size={14} /> {cert.credentialId}
+                <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1.5 text-xs uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
+                  <CheckCircle size={14} className="shrink-0" />
+                  <span className="[overflow-wrap:anywhere]">{cert.credentialId}</span>
                 </span>
               </div>
               <p className="mt-4 text-sm leading-relaxed text-[color:var(--text-muted)]">
