@@ -2,9 +2,9 @@
 // Source of truth for public/resume.pdf. Edit this file, then run:
 //   typst compile cv/resume.typ public/resume.pdf
 
-#set page(width: 8.5in, height: 11in, margin: (top: 0.5in, bottom: 0.35in, left: 0.6in, right: 0.6in))
-#set text(font: "Helvetica", size: 9.7pt, fill: rgb("#1a1a1a"))
-#set par(justify: false, leading: 0.58em)
+#set page(width: 8.5in, height: 11in, margin: (top: 0.45in, bottom: 0.3in, left: 0.6in, right: 0.6in))
+#set text(font: "Helvetica", size: 9.6pt, fill: rgb("#1a1a1a"))
+#set par(justify: false, leading: 0.56em)
 
 #let accent = rgb("#1d4ed8")
 #let muted = rgb("#555555")
@@ -129,8 +129,8 @@
     #section("Education")
     #role("BSc Data Science with a Year of Professional Experience", "Queen's University Belfast", "Sep 2023 – Present")
     #v(0.25em)
-    #text(size: 9pt, weight: "bold")[Level 2 Modules (TBC):]
-    #text(size: 9pt)[ Data Structures \& Algorithms in C++, Intro to AI \& Machine Learning, Linear Algebra, Professional \& Transferable Skills, Statistical Inference, Theory of Computation]
+    #text(size: 9pt, weight: "bold")[Level 2 Modules (Completed):]
+    #text(size: 9pt)[ Data Structures \& Algorithms in C++ (90%), Intro to AI \& Machine Learning (72%), Linear Algebra (68%), Professional \& Transferable Skills (77%), Statistical Inference (65%), Theory of Computation (86%)]
     #v(0.35em)
     #text(size: 9pt, weight: "bold")[Level 1 Modules (Completed):]
     #text(size: 9pt)[ Procedural Programming in Java (87%), Databases in MySQL (66%), OOP in Java (75%), Intro to Statistics \& Probability (66%), Intro to Linear Algebra \& Analysis (69%)]
@@ -172,8 +172,10 @@
     #sidesection("Soft Skills")
     #text(size: 9pt)[Teamwork \& Collaboration, Communication, Problem Solving, Adaptability, Leadership, Willingness to Learn]
 
-    #sidesection("Interests")
-    #text(size: 9pt)[LeetCode, GitHub, Machine Learning, Computer Hardware, Travelling]
+    #block(breakable: false)[
+      #sidesection("Interests")
+      #text(size: 9pt)[LeetCode, GitHub, Machine Learning, Computer Hardware, Travelling]
+    ]
 
     #block(breakable: false)[
       #sidesection("Leadership & Activities")
