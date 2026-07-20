@@ -157,20 +157,32 @@
 
     #sidesection("Awards & Certifications")
     #text(size: 9pt)[
-      • The William Hamilton Data Science Prize (2024)\
-      • Multi AI Agent Systems with crewAI (DeepLearning.AI, 2025)\
-      • Practical Multi AI Agents \& Advanced Use Cases (DeepLearning.AI, 2025)\
-      • Complete A.I. \& Machine Learning, Data Science Bootcamp (Udemy, 2024)\
+      • *The William Hamilton Data Science Prize* (2024) — awarded for top academic performance in the Data Science programme.\
+      • *Multi AI Agent Systems with crewAI* (DeepLearning.AI, 2025) — multi-agent workflow design for task automation and RAG.\
+      • *Practical Multi AI Agents \& Advanced Use Cases* (DeepLearning.AI, 2025) — applied agentic systems for chatbots and automation.\
+      • *Complete A.I. \& Machine Learning, Data Science Bootcamp* (Udemy, 2024) — end-to-end ML projects in Python and TensorFlow.\
       • Duke of Edinburgh Gold (TBC)\
       • OCN Youth Work Level 1 (2022)\
-      • British Sign Language Level 1 (2023)
+      • British Sign Language Level 1 (2023)\
+      • UKMT Intermediate Mathematics Challenge (2021)\
+      • UKMT Senior Mathematics Challenge (2022)\
+      • Harvard's CS50 Puzzle Day (2023)
     ]
 
     #sidesection("Soft Skills")
     #text(size: 9pt)[Teamwork \& Collaboration, Communication, Problem Solving, Adaptability, Leadership, Willingness to Learn]
 
     #sidesection("Interests")
-    #text(size: 9pt)[LeetCode, GitHub, QUB Badminton Society, Machine Learning, Computer Hardware, Travelling]
+    #text(size: 9pt)[LeetCode, GitHub, Machine Learning, Computer Hardware, Travelling]
+
+    #block(breakable: false)[
+      #sidesection("Leadership & Activities")
+      #text(size: 9pt, weight: "bold")[Rapid7 Intern Committee]
+      #text(size: 9pt)[ — Elected by fellow interns to help plan and run monthly social events for the intern cohort.]
+      #v(0.3em)
+      #text(size: 9pt, weight: "bold")[QUB Badminton Society]
+      #text(size: 9pt)[ — Member.]
+    ]
 
     #block(breakable: false)[
       #sidesection("Additional Information")
@@ -178,7 +190,8 @@
         Full UK Driving Licence\
         English (Fluent)\
         Mandarin (Conversational)\
-        Japanese (Beginner)
+        Japanese (Beginner)\
+        GitHub: #link("https://github.com/KingAdam707")[github.com/KingAdam707]
       ]
     ]
   ]
