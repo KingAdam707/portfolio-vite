@@ -26,7 +26,7 @@ const education = [
     icon: GraduationCap,
     awardLabel: "William Hamilton Data Science Prize",
     awardUrl:
-      "https://www.newsletter.co.uk/business/northern-ireland-software-firm-honours-belfast-tech-leader-with-new-qub-student-bursary-4640224",
+      "https://www.fionabrowncommunications.com/news/liberty-it-honours-tech-leader-with-new-qub-student-bursary/",
     description:
       "Blending mathematics and computer science with advanced linear algebra, statistics, and model selection. Built a strong foundation in AI, data structures, algorithms, and object-oriented programming.",
     achievements: [
@@ -126,9 +126,14 @@ export default function Education() {
                 <div className="flex flex-wrap items-center gap-3">
                   <h3 className="text-2xl font-light text-[color:var(--text)]">{item.degree}</h3>
                   {item.awardLabel ? (
-                    <span className="rounded-full border border-[color:var(--border-strong)] bg-[color:var(--surface)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[color:var(--text)]">
+                    <a
+                      href={item.awardUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="rounded-full border border-[color:var(--border-strong)] bg-[color:var(--surface)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[color:var(--text)] transition hover:bg-[color:var(--surface-hover)]"
+                    >
                       {item.awardLabel}
-                    </span>
+                    </a>
                   ) : null}
                 </div>
                 <p className="mt-2 text-sm uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
@@ -163,7 +168,18 @@ export default function Education() {
                     {item.achievements.map((achievement) => (
                       <div key={achievement} className="flex items-start gap-3 text-sm text-[color:var(--text-muted)]">
                         <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--border-strong)]" />
-                        <span>{achievement}</span>
+                        {item.awardUrl && achievement.includes("William Hamilton") ? (
+                          <a
+                            href={item.awardUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="underline decoration-[color:var(--border-strong)] underline-offset-2 transition hover:text-[color:var(--text)]"
+                          >
+                            {achievement}
+                          </a>
+                        ) : (
+                          <span>{achievement}</span>
+                        )}
                       </div>
                     ))}
                   </div>
@@ -176,22 +192,43 @@ export default function Education() {
 
         <div className="mt-16 grid gap-6 border-t border-[color:var(--border)] pt-16 md:grid-cols-3">
           {[
-            { value: "3", label: "Languages Used" },
-            { value: "AI Engineer Intern", label: "Rapid7 Placement" },
-            { value: "William Hamilton", label: "Data Science Prize" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-center sm:p-8"
-            >
-              <div className="text-3xl font-light text-[color:var(--text)] sm:text-4xl">
-                {stat.value}
+            { value: "3", label: "Languages Used", url: undefined },
+            { value: "AI Engineer Intern", label: "Rapid7 Placement", url: undefined },
+            {
+              value: "William Hamilton",
+              label: "Data Science Prize",
+              url: "https://www.fionabrowncommunications.com/news/liberty-it-honours-tech-leader-with-new-qub-student-bursary/",
+            },
+          ].map((stat) =>
+            stat.url ? (
+              <a
+                key={stat.label}
+                href={stat.url}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-center transition hover:border-[color:var(--border-strong)] hover:bg-[color:var(--surface-hover)] sm:p-8"
+              >
+                <div className="text-3xl font-light text-[color:var(--text)] sm:text-4xl">
+                  {stat.value}
+                </div>
+                <div className="mt-2 text-xs uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
+                  {stat.label}
+                </div>
+              </a>
+            ) : (
+              <div
+                key={stat.label}
+                className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)] p-6 text-center sm:p-8"
+              >
+                <div className="text-3xl font-light text-[color:var(--text)] sm:text-4xl">
+                  {stat.value}
+                </div>
+                <div className="mt-2 text-xs uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
+                  {stat.label}
+                </div>
               </div>
-              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            ),
+          )}
         </div>
       </div>
     </div>
