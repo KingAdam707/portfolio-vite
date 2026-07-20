@@ -157,7 +157,7 @@
 
     #sidesection("Awards & Certifications")
     #text(size: 9pt)[
-      • *The William Hamilton Data Science Prize* (2024) — awarded for top academic performance in the Data Science programme.\
+      • #link("https://www.fionabrowncommunications.com/news/liberty-it-honours-tech-leader-with-new-qub-student-bursary/")[*The William Hamilton Data Science Prize*] (2024) — awarded for top academic performance in the Data Science programme.\
       • *Multi AI Agent Systems with crewAI* (DeepLearning.AI, 2025) — multi-agent workflow design for task automation and RAG.\
       • *Practical Multi AI Agents \& Advanced Use Cases* (DeepLearning.AI, 2025) — applied agentic systems for chatbots and automation.\
       • *Complete A.I. \& Machine Learning, Data Science Bootcamp* (Udemy, 2024) — end-to-end ML projects in Python and TensorFlow.\

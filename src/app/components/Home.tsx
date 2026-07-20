@@ -88,8 +88,12 @@ const featuredProject = {
   caseStudy: "/projects/munchmatch",
 }
 
-const certHighlights = [
-  { label: "William Hamilton Data Science Prize", year: "2024" },
+const certHighlights: { label: string; year: string; url?: string }[] = [
+  {
+    label: "William Hamilton Data Science Prize",
+    year: "2024",
+    url: "https://www.fionabrowncommunications.com/news/liberty-it-honours-tech-leader-with-new-qub-student-bursary/",
+  },
   { label: "Multi AI Agent Systems with crewAI", year: "2025" },
   { label: "Complete A.I. & Machine Learning Bootcamp", year: "2024" },
 ]
@@ -550,19 +554,37 @@ export default function Home() {
             </AppLink>
           </div>
           <div className="flex flex-wrap gap-3">
-            {certHighlights.map((cert) => (
-              <motion.div
-                key={cert.label}
-                whileHover={{ scale: 1.03 }}
-                className="flex items-center gap-3 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-3"
-              >
-                <Award size={16} className="text-[color:var(--text)]" />
-                <span className="text-xs uppercase tracking-[0.15em] text-[color:var(--text-muted)]">
-                  {cert.label}
-                </span>
-                <span className="text-[10px] text-[color:var(--text-muted)]">{cert.year}</span>
-              </motion.div>
-            ))}
+            {certHighlights.map((cert) => {
+              const content = (
+                <>
+                  <Award size={16} className="text-[color:var(--text)]" />
+                  <span className="text-xs uppercase tracking-[0.15em] text-[color:var(--text-muted)]">
+                    {cert.label}
+                  </span>
+                  <span className="text-[10px] text-[color:var(--text-muted)]">{cert.year}</span>
+                </>
+              )
+              return cert.url ? (
+                <motion.a
+                  key={cert.label}
+                  href={cert.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.03 }}
+                  className="flex items-center gap-3 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-3 transition hover:border-[color:var(--border-strong)] hover:bg-[color:var(--surface-hover)]"
+                >
+                  {content}
+                </motion.a>
+              ) : (
+                <motion.div
+                  key={cert.label}
+                  whileHover={{ scale: 1.03 }}
+                  className="flex items-center gap-3 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-3"
+                >
+                  {content}
+                </motion.div>
+              )
+            })}
           </div>
         </div>
 
