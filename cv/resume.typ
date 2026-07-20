@@ -2,9 +2,9 @@
 // Source of truth for public/resume.pdf. Edit this file, then run:
 //   typst compile cv/resume.typ public/resume.pdf
 
-#set page(width: 8.5in, height: 11in, margin: (top: 0.55in, bottom: 0.5in, left: 0.6in, right: 0.6in))
-#set text(font: "Helvetica", size: 10pt, fill: rgb("#1a1a1a"))
-#set par(justify: false, leading: 0.65em)
+#set page(width: 8.5in, height: 11in, margin: (top: 0.5in, bottom: 0.35in, left: 0.6in, right: 0.6in))
+#set text(font: "Helvetica", size: 9.7pt, fill: rgb("#1a1a1a"))
+#set par(justify: false, leading: 0.58em)
 
 #let accent = rgb("#1d4ed8")
 #let muted = rgb("#555555")
@@ -41,6 +41,11 @@
   }
 }
 
+#let contact(icon, body) = box(grid(
+  columns: (auto, auto), column-gutter: 0.3em, align: horizon,
+  image("icons/" + icon, height: 9pt), body,
+))
+
 // ---------- Header ----------
 #align(center)[
   #text(size: 24pt, weight: "bold")[Adam Soong]
@@ -48,10 +53,14 @@
   #text(size: 11pt, fill: muted)[Data Science Student at Queen's University Belfast]
   #v(0.1em)
   #text(size: 9pt, fill: muted)[University Rd, Belfast BT7 1NN]
-  #v(0.25em)
-  #text(size: 9.3pt)[
-    asoong5108\@gmail.com #h(0.6em) · #h(0.6em) +44 7484 357690 #h(0.6em) · #h(0.6em) linkedin.com/in/adamsoong
-  ]
+  #v(0.3em)
+  #contact("mail.svg", link("mailto:asoong5108@gmail.com")[#text(size: 9.3pt)[asoong5108\@gmail.com]])
+  #h(0.7em)
+  #contact("phone.svg", text(size: 9.3pt)[+44 7484 357690])
+  #h(0.7em)
+  #contact("linkedin.svg", link("https://www.linkedin.com/in/adamsoong/")[#text(size: 9.3pt)[linkedin.com/in/adamsoong]])
+  #h(0.7em)
+  #contact("globe.svg", link("https://adam-soong-portfolio.web.app")[#text(size: 9.3pt)[adam-soong-portfolio.web.app]])
 ]
 #v(0.4em)
 #line(length: 100%, stroke: 0.8pt + rule)
@@ -92,16 +101,30 @@
       [Resolved customer queries efficiently and adapted quickly to changing demands under pressure.],
     ))
 
-    #section("Academic Projects")
-    #block(breakable: false, bullets((
-      [*Databases* — Built a MySQL database for managing student work-placement records, progressed through normalisation to 3rd Normal Form.],
-      [*Object-Oriented Programming* — Built a Java application for storing and retrieving image data, applying inheritance, polymorphism, and encapsulation.],
-    )))
+    #block(breakable: false)[
+      #section("Academic Projects")
+      #bullets((
+        [*Databases* — Built a MySQL database for managing student work-placement records, progressed through normalisation to 3rd Normal Form.],
+        [*Object-Oriented Programming* — Built a Java application for storing and retrieving image data, applying inheritance, polymorphism, and encapsulation.],
+      ))
+    ]
 
-    #section("Volunteering")
-    #block(breakable: false, bullets((
-      [*Oasis Youth Centre* — Designed and built the centre's website (Wix), including a volunteer sign-up form, to improve accessibility and their online presence.],
-    )))
+    #block(breakable: false)[
+      #section("Personal Projects")
+      #bullets((
+        [*QuickQR* — A zero-backend web tool that turns any link into a large, scannable QR code instantly. Built in JavaScript and deployed to GitHub Pages.],
+        [*MunchMatch* — A real-time app where a group swipes on AI-suggested restaurants until everyone agrees on where to eat. Built with Next.js, Firebase, and GPT-4o-mini.],
+        [*BorrowBuddy* — An Android app for tracking items lent or borrowed, with due-date reminders, QR sharing, and Firebase sync.],
+      ))
+      #text(size: 8.7pt, fill: muted)[Full write-ups and live demos: #link("https://adam-soong-portfolio.web.app/projects")[adam-soong-portfolio.web.app/projects]]
+    ]
+
+    #block(breakable: false)[
+      #section("Volunteering")
+      #bullets((
+        [*Oasis Youth Centre* — Designed and built the centre's website (Wix), including a volunteer sign-up form, to improve accessibility and their online presence.],
+      ))
+    ]
 
     #section("Education")
     #role("BSc Data Science with a Year of Professional Experience", "Queen's University Belfast", "Sep 2023 – Present")
@@ -149,21 +172,25 @@
     #sidesection("Interests")
     #text(size: 9pt)[LeetCode, GitHub, QUB Badminton Society, Machine Learning, Computer Hardware, Travelling]
 
-    #sidesection("Additional Information")
-    #text(size: 9pt)[
-      Full UK Driving Licence\
-      English (Fluent)\
-      Mandarin (Conversational)\
-      Japanese (Beginner)
+    #block(breakable: false)[
+      #sidesection("Additional Information")
+      #text(size: 9pt)[
+        Full UK Driving Licence\
+        English (Fluent)\
+        Mandarin (Conversational)\
+        Japanese (Beginner)
+      ]
     ]
   ]
 )
 
 #v(0.5em)
-#section("References")
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  text(size: 9pt)[*Anna Jurek-Loughrey* — Data Science Director\ a.jurek\@qub.ac.uk],
-  text(size: 9pt)[*Darryl Stewart* — EEECS Director\ dw.stewart\@qub.ac.uk],
-)
+#block(breakable: false)[
+  #section("References")
+  #grid(
+    columns: (1fr, 1fr),
+    column-gutter: 1em,
+    text(size: 9pt)[*Anna Jurek-Loughrey* — Data Science Director\ a.jurek\@qub.ac.uk],
+    text(size: 9pt)[*Darryl Stewart* — EEECS Director\ dw.stewart\@qub.ac.uk],
+  )
+]
