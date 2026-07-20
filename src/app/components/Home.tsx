@@ -8,11 +8,14 @@ import {
   useTransform,
 } from "motion/react"
 import {
+  ArrowRight,
+  Award,
   Bot,
   BrainCircuit,
   ChartLine,
   Copy,
   Database,
+  ExternalLink,
   Github,
   Linkedin,
   Mail,
@@ -72,6 +75,23 @@ const stats = [
   { value: "2+", label: "Years Learning AI" },
   { value: "3", label: "Projects Built" },
   { value: "8", label: "Certifications Earned" },
+]
+
+const featuredProject = {
+  title: "MunchMatch",
+  tagline: "Real-time multiplayer restaurant voting",
+  description:
+    "A group describes what they're in the mood for, AI turns it into restaurant suggestions, and everyone swipes until the whole group agrees on where to eat.",
+  image: "/screenshots/MunchMatch_Home.jpg",
+  tags: ["Next.js", "TypeScript", "Firebase", "GPT-4o-mini"],
+  live: "https://munch-match-two.vercel.app",
+  caseStudy: "/projects/munchmatch",
+}
+
+const certHighlights = [
+  { label: "William Hamilton Data Science Prize", year: "2024" },
+  { label: "Multi AI Agent Systems with crewAI", year: "2025" },
+  { label: "Complete A.I. & Machine Learning Bootcamp", year: "2024" },
 ]
 
 const skills = [
@@ -408,6 +428,81 @@ export default function Home() {
           ))}
         </div>
 
+        <div className="border-t border-[color:var(--border)] py-16 sm:py-24">
+          <div className="mb-10 flex flex-col gap-3">
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
+              Featured Project
+            </p>
+            <h3 className="text-2xl font-light text-[color:var(--text)] sm:text-3xl md:text-4xl">
+              {featuredProject.title}
+            </h3>
+          </div>
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="overflow-hidden rounded-2xl border border-[color:var(--border)] bg-[color:var(--surface)]"
+            >
+              <div className="flex items-center gap-1.5 border-b border-[color:var(--border)] px-4 py-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-[color:var(--border-strong)]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[color:var(--border-strong)]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-[color:var(--border-strong)]" />
+              </div>
+              <img
+                src={featuredProject.image}
+                alt={`${featuredProject.title} live app screenshot`}
+                className="w-full"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
+                {featuredProject.tagline}
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-[color:var(--text-muted)] sm:text-base">
+                {featuredProject.description}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {featuredProject.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-3 py-1 text-xs uppercase tracking-[0.2em] text-[color:var(--text-muted)]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-6 flex flex-wrap gap-4">
+                <motion.a
+                  href={featuredProject.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-2 rounded-full bg-[color:var(--text)] px-6 py-3 text-xs uppercase tracking-[0.2em] text-[color:var(--bg)]"
+                >
+                  Try It Live
+                  <ExternalLink size={14} />
+                </motion.a>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <AppLink
+                    to={featuredProject.caseStudy}
+                    className="inline-flex items-center gap-2 rounded-full border border-[color:var(--border)] px-6 py-3 text-xs uppercase tracking-[0.2em] text-[color:var(--text)] transition hover:border-[color:var(--border-strong)] hover:bg-[color:var(--surface-hover)]"
+                  >
+                    View Case Study
+                  </AppLink>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
         <div id="skills" className="scroll-mt-24 border-t border-[color:var(--border)] py-16 sm:py-24">
           <div className="mb-12 flex flex-col gap-3">
             <h3 className="text-2xl font-light text-[color:var(--text)] sm:text-3xl md:text-4xl">
@@ -433,6 +528,85 @@ export default function Home() {
                 </motion.span>
               ))}
             </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="border-t border-[color:var(--border)] py-16 sm:py-24">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+            <div className="flex flex-col gap-3">
+              <h3 className="text-2xl font-light text-[color:var(--text)] sm:text-3xl md:text-4xl">
+                Certifications
+              </h3>
+              <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--text-muted)]">
+                A few of the 8 I&apos;ve earned
+              </p>
+            </div>
+            <AppLink
+              to="/certifications"
+              className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.24em] text-[color:var(--text-muted)] transition hover:text-[color:var(--text)]"
+            >
+              View All
+              <ArrowRight size={14} />
+            </AppLink>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {certHighlights.map((cert) => (
+              <motion.div
+                key={cert.label}
+                whileHover={{ scale: 1.03 }}
+                className="flex items-center gap-3 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-3"
+              >
+                <Award size={16} className="text-[color:var(--text)]" />
+                <span className="text-xs uppercase tracking-[0.15em] text-[color:var(--text-muted)]">
+                  {cert.label}
+                </span>
+                <span className="text-[10px] text-[color:var(--text-muted)]">{cert.year}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-8 overflow-hidden rounded-3xl bg-[color:var(--text)] px-6 py-16 text-center sm:px-12 sm:py-20">
+          <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--bg)] opacity-70">
+            Open to Part-Time Work
+          </p>
+          <h3 className="mt-4 text-3xl font-light text-[color:var(--bg)] sm:text-4xl md:text-5xl">
+            Let&apos;s talk.
+          </h3>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-[color:var(--bg)] opacity-80 sm:text-base">
+            I&apos;m finishing my final year at Queen&apos;s and looking for part-time work
+            alongside my studies. If that sounds like a fit, I&apos;d love to hear from you.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <motion.a
+              href={mailtoLink}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 rounded-full bg-[color:var(--bg)] px-8 py-3 text-xs uppercase tracking-[0.2em] text-[color:var(--text)]"
+            >
+              Email Me
+              <Mail size={14} />
+            </motion.a>
+            <motion.a
+              href="https://www.linkedin.com/in/adamsoong/"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.1, y: -3 }}
+              className="flex items-center justify-center rounded-full border border-[color:var(--bg)] p-3 text-[color:var(--bg)]"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} />
+            </motion.a>
+            <motion.a
+              href="https://github.com/KingAdam707"
+              target="_blank"
+              rel="noreferrer"
+              whileHover={{ scale: 1.1, y: -3 }}
+              className="flex items-center justify-center rounded-full border border-[color:var(--bg)] p-3 text-[color:var(--bg)]"
+              aria-label="GitHub"
+            >
+              <Github size={18} />
+            </motion.a>
           </div>
         </div>
       </div>
