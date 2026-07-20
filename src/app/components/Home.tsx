@@ -237,8 +237,10 @@ export default function Home() {
                   animate={{ scale, rotate }}
                   transition={{ duration: 0.35, ease: "easeOut" }}
                 >
-                  <motion.div
+                  <motion.a
+                    href="#skills"
                     whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
                     className="group relative flex items-center gap-3 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-5 py-3 backdrop-blur-md"
                   >
                     <span className="absolute inset-0 rounded-full bg-[color:var(--surface-hover)] opacity-0 blur-xl transition group-hover:opacity-100" />
@@ -246,7 +248,7 @@ export default function Home() {
                     <span className="relative text-xs uppercase tracking-[0.2em] text-[color:var(--text-muted)]">
                       {card.label}
                     </span>
-                  </motion.div>
+                  </motion.a>
                 </motion.div>
               )
             })}
@@ -406,7 +408,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="border-t border-[color:var(--border)] py-16 sm:py-24">
+        <div id="skills" className="scroll-mt-24 border-t border-[color:var(--border)] py-16 sm:py-24">
           <div className="mb-12 flex flex-col gap-3">
             <h3 className="text-2xl font-light text-[color:var(--text)] sm:text-3xl md:text-4xl">
               Skills &amp; Expertise
