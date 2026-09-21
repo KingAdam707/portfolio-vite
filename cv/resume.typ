@@ -81,15 +81,16 @@
     ])
 
     #section("Experience")
-    #role("AI Engineer Intern", "Rapid7, Belfast", "Jun 2025 – Jun 2026")
+    #role("AI Engineer Intern", "Rapid7, Belfast (global cybersecurity company)", "Jun 2025 – Jun 2026")
     #v(0.25em)
     #bullets((
-      [Designed and built a shared software tool that standardised how my team tracks and compares machine learning results, adopted across multiple projects and still in use.],
-      [Ran data analysis and experiments on real security data to help automatically filter out harmless alerts, cutting manual review workload for the security team.],
-      [Presented my work directly to senior leadership twice, including leading a live demo and Q\&A session for the AI leadership team.],
-      [Rewrote outdated training material so future interns wouldn't hit the same setup problems I did.],
-      [Worked daily as part of a team split between Belfast and the US, keeping communication clear across time zones.],
-      [Secured a graduate job offer to return to Rapid7 after graduating.],
+      [Designed and built a shared *MLflow evaluation framework* (tested Python package with CI) that standardised how the team evaluates and tracks models, now used across multiple projects.],
+      [Built repeatable evaluation for a security alert classifier: *temporal cross-validation*, customer-based splits that stop large customers skewing results, and strict false-benign-rate safety targets.],
+      [Ran embedding, XGBoost, logistic regression and anomaly-detection experiments on real security alert data, and implemented *dual thresholding* with an UNKNOWN class that reduced misclassifications.],
+      [Implemented *confidence scoring* (Very High to Low bands) and deterministic explanation templates for each alert disposition.],
+      [Prototyped a *multi-agent* alert classification workflow in CrewAI with synthetic-alert, investigator and reporter agents.],
+      [Led a live demo and Q\&A on the framework for the *AI leadership team*, and presented Project Foundry findings to leadership.],
+      [Wrote end-to-end docs for the retraining pipeline and MLflow framework, and rewrote an outdated SageMaker workshop for future interns.],
     ))
 
     #v(0.4em)
@@ -149,7 +150,7 @@
     #v(0.3em)
     #text(size: 9pt, weight: "bold")[Data \& ML Libraries:] #text(size: 9pt)[Pandas, NumPy, TensorFlow, Scikit-learn, XGBoost, Matplotlib/Seaborn]
     #v(0.3em)
-    #text(size: 9pt, weight: "bold")[ML/AI Tools:] #text(size: 9pt)[MLflow, CrewAI (agentic workflows)]
+    #text(size: 9pt, weight: "bold")[ML/AI Tools:] #text(size: 9pt)[MLflow, Optuna, CrewAI (agentic workflows)]
     #v(0.3em)
     #text(size: 9pt, weight: "bold")[Platforms:] #text(size: 9pt)[AWS SageMaker, Git/GitHub, JIRA, Confluence, Metabase]
     #v(0.3em)
