@@ -1,4 +1,4 @@
-// Adam Soong — CV
+// Adam Soong CV
 // Source of truth for public/resume.pdf. Edit this file, then run:
 //   typst compile cv/resume.typ public/resume.pdf
 
@@ -75,8 +75,8 @@
     #par(text(size: 9pt)[
       Final-year Data Science student at Queen's University Belfast, having just completed a
       year-long placement as an AI Engineer Intern at Rapid7, where I was offered a graduate
-      role to return to after graduation. Looking for part-time work during my final year —
-      reliable, organised, and experienced working in fast-paced, team-based environments
+      role to return to after graduation. Looking for part-time work during my final year.
+      Reliable, organised, and experienced working in fast-paced, team-based environments
       from both a global tech placement and prior retail work.
     ])
 
@@ -84,7 +84,7 @@
     #role("AI Engineer Intern", "Rapid7, Belfast", "Jun 2025 – Jun 2026")
     #v(0.25em)
     #bullets((
-      [Designed and built a shared software tool that standardised how my team tracks and compares machine learning results — adopted across multiple projects and still in use.],
+      [Designed and built a shared software tool that standardised how my team tracks and compares machine learning results, adopted across multiple projects and still in use.],
       [Ran data analysis and experiments on real security data to help automatically filter out harmless alerts, cutting manual review workload for the security team.],
       [Presented my work directly to senior leadership twice, including leading a live demo and Q\&A session for the AI leadership team.],
       [Rewrote outdated training material so future interns wouldn't hit the same setup problems I did.],
@@ -104,17 +104,17 @@
     #block(breakable: false)[
       #section("Academic Projects")
       #bullets((
-        [*Databases* — Built a MySQL database for managing student work-placement records, progressed through normalisation to 3rd Normal Form.],
-        [*Object-Oriented Programming* — Built a Java application for storing and retrieving image data, applying inheritance, polymorphism, and encapsulation.],
+        [*Databases:* Built a MySQL database for managing student work-placement records, progressed through normalisation to 3rd Normal Form.],
+        [*Object-Oriented Programming:* Built a Java application for storing and retrieving image data, applying inheritance, polymorphism, and encapsulation.],
       ))
     ]
 
     #block(breakable: false)[
       #section("Personal Projects")
       #bullets((
-        [*QuickQR* — A zero-backend web tool that turns any link into a large, scannable QR code instantly. Built in JavaScript and deployed to GitHub Pages.],
-        [*MunchMatch* — A real-time app where a group swipes on AI-suggested restaurants until everyone agrees on where to eat. Built with Next.js, Firebase, and GPT-4o-mini.],
-        [*BorrowBuddy* — An Android app for tracking items lent or borrowed, with due-date reminders, QR sharing, and Firebase sync.],
+        [*QuickQR:* A zero-backend web tool that turns any link into a large, scannable QR code instantly. Built in JavaScript and deployed to GitHub Pages.],
+        [*MunchMatch:* A real-time app where a group swipes on AI-suggested restaurants until everyone agrees on where to eat. Built with Next.js, Firebase, and GPT-4o-mini.],
+        [*BorrowBuddy:* An Android app for tracking items lent or borrowed, with due-date reminders, QR sharing, and Firebase sync.],
       ))
       #text(size: 8.7pt, fill: muted)[Full write-ups and live demos: #link("https://adam-soong-portfolio.web.app/projects")[adam-soong-portfolio.web.app/projects]]
     ]
@@ -122,7 +122,7 @@
     #block(breakable: false)[
       #section("Volunteering")
       #bullets((
-        [*Oasis Youth Centre* — Designed and built the centre's website (Wix), including a volunteer sign-up form, to improve accessibility and their online presence.],
+        [*Oasis Youth Centre:* Designed and built the centre's website (Wix), including a volunteer sign-up form, to improve accessibility and their online presence.],
       ))
     ]
 
@@ -157,10 +157,10 @@
 
     #sidesection("Awards & Certifications")
     #text(size: 9pt)[
-      • #link("https://www.fionabrowncommunications.com/news/liberty-it-honours-tech-leader-with-new-qub-student-bursary/")[*The William Hamilton Data Science Prize*] (2024) — awarded for top academic performance in the Data Science programme.\
-      • *Multi AI Agent Systems with crewAI* (DeepLearning.AI, 2025) — multi-agent workflow design for task automation and RAG.\
-      • *Practical Multi AI Agents \& Advanced Use Cases* (DeepLearning.AI, 2025) — applied agentic systems for chatbots and automation.\
-      • *Complete A.I. \& Machine Learning, Data Science Bootcamp* (Udemy, 2024) — end-to-end ML projects in Python and TensorFlow.\
+      • #link("https://www.fionabrowncommunications.com/news/liberty-it-honours-tech-leader-with-new-qub-student-bursary/")[*The William Hamilton Data Science Prize*] (2024): awarded for top academic performance in the Data Science programme.\
+      • *Multi AI Agent Systems with crewAI* (DeepLearning.AI, 2025): multi-agent workflow design for task automation and RAG.\
+      • *Practical Multi AI Agents \& Advanced Use Cases* (DeepLearning.AI, 2025): applied agentic systems for chatbots and automation.\
+      • *Complete A.I. \& Machine Learning, Data Science Bootcamp* (Udemy, 2024): end-to-end ML projects in Python and TensorFlow.\
       • Duke of Edinburgh Gold (TBC)\
       • OCN Youth Work Level 1 (2022)\
       • British Sign Language Level 1 (2023)\
@@ -179,11 +179,11 @@
 
     #block(breakable: false)[
       #sidesection("Leadership & Activities")
-      #text(size: 9pt, weight: "bold")[Rapid7 Intern Committee]
-      #text(size: 9pt)[ — Elected by fellow interns to help plan and run monthly social events for the intern cohort.]
+      #text(size: 9pt, weight: "bold")[Rapid7 Intern Committee:]
+      #text(size: 9pt)[ Elected by fellow interns to help plan and run monthly social events for the intern cohort.]
       #v(0.3em)
-      #text(size: 9pt, weight: "bold")[QUB Badminton Society]
-      #text(size: 9pt)[ — Member.]
+      #text(size: 9pt, weight: "bold")[QUB Badminton Society:]
+      #text(size: 9pt)[ Member.]
     ]
 
     #block(breakable: false)[
@@ -205,7 +205,7 @@
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 1em,
-    text(size: 9pt)[*Anna Jurek-Loughrey* — Data Science Director\ a.jurek\@qub.ac.uk],
-    text(size: 9pt)[*Darryl Stewart* — EEECS Director\ dw.stewart\@qub.ac.uk],
+    text(size: 9pt)[*Anna Jurek-Loughrey*, Data Science Director\ a.jurek\@qub.ac.uk],
+    text(size: 9pt)[*Darryl Stewart*, EEECS Director\ dw.stewart\@qub.ac.uk],
   )
 ]
