@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import AppLink from "./AppLink"
+import PageShell from "./PageShell"
 import {
   AnimatePresence,
   motion,
@@ -217,24 +218,16 @@ export default function Home() {
   }
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[color:var(--bg)]">
-      <div className="vt-bg absolute inset-0 overflow-hidden">
-        {orbs.map((orb, index) => (
-          <motion.div
-            key={index}
-            className={orb.className}
-            animate={orb.animate}
-            transition={{ duration: orb.duration, repeat: Infinity, ease: "easeInOut" }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-[linear-gradient(var(--grid)_1px,transparent_1px),linear-gradient(90deg,var(--grid)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
+    <PageShell
+      orbs={orbs}
+      maxWidth="max-w-7xl"
+      bgExtra={
         <motion.div
           className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[color:var(--glow)] blur-3xl"
           style={{ x: glowX, y: glowY }}
         />
-      </div>
-
-      <div className="vt-content relative z-10 mx-auto max-w-7xl px-5 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-32">
+      }
+    >
         <div className="relative pb-12 sm:pb-16 lg:min-h-[65vh]">
           <div className="hidden lg:block">
             {floatingCards.map((card) => {
@@ -347,7 +340,7 @@ export default function Home() {
                 )
               })}
 
-              <div className="group relative">
+              <div className="group relative z-20">
                 <motion.button
                   whileHover={{ scale: 1.1, y: -3 }}
                   onClick={() => setEmailOpen((prev) => !prev)}
@@ -360,7 +353,7 @@ export default function Home() {
                 </motion.button>
 
                 <div
-                  className={`absolute right-0 top-10 w-60 origin-top-right rounded-2xl border border-[color:var(--border)] bg-[color:var(--nav)] p-2 shadow-lg backdrop-blur-lg transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 before:absolute before:-top-4 before:left-0 before:h-4 before:w-full before:content-[''] ${
+                  className={`absolute right-0 top-10 z-20 w-60 origin-top-right rounded-2xl border border-[color:var(--border)] bg-[color:var(--nav)] p-2 shadow-lg backdrop-blur-lg transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 before:absolute before:-top-4 before:left-0 before:h-4 before:w-full before:content-[''] ${
                     emailOpen
                       ? "pointer-events-auto translate-y-0 opacity-100"
                       : "pointer-events-none translate-y-2 opacity-0"
@@ -402,7 +395,7 @@ export default function Home() {
                 </div>
 
                 {copied ? (
-                  <div className="pointer-events-none absolute right-0 top-24 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-1 text-[10px] uppercase tracking-[0.3em] text-[color:var(--text-muted)] backdrop-blur-sm">
+                  <div className="pointer-events-none absolute right-0 top-24 z-20 rounded-full border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-1 text-[10px] uppercase tracking-[0.3em] text-[color:var(--text-muted)] backdrop-blur-sm">
                     Copied
                   </div>
                 ) : null}
@@ -631,7 +624,6 @@ export default function Home() {
             </motion.a>
           </div>
         </div>
-      </div>
-    </div>
+    </PageShell>
   )
 }

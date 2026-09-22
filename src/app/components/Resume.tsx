@@ -1,5 +1,6 @@
 import { motion } from "motion/react"
 import { Download, ExternalLink } from "lucide-react"
+import PageShell from "./PageShell"
 
 const resumeUrl = "/resume.pdf"
 
@@ -23,20 +24,7 @@ const orbs = [
 
 export default function Resume() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[color:var(--bg)]">
-      <div className="vt-bg absolute inset-0 overflow-hidden">
-        {orbs.map((orb, index) => (
-          <motion.div
-            key={index}
-            className={orb.className}
-            animate={orb.animate}
-            transition={{ duration: orb.duration, repeat: Infinity, ease: "easeInOut" }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-[linear-gradient(var(--grid)_1px,transparent_1px),linear-gradient(90deg,var(--grid)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
-      </div>
-
-      <div className="vt-content relative z-10 mx-auto max-w-6xl px-5 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-32">
+    <PageShell orbs={orbs} maxWidth="max-w-6xl">
         <div className="mb-10 max-w-3xl">
           <h1 className="text-4xl font-light text-[color:var(--text)] sm:text-5xl md:text-6xl">
             Curriculum Vitae
@@ -84,7 +72,6 @@ export default function Resume() {
         <p className="mt-4 hidden text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)] md:block">
           If the preview does not load, use the download button above.
         </p>
-      </div>
-    </div>
+    </PageShell>
   )
 }

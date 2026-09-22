@@ -1,14 +1,16 @@
 import { createBrowserRouter } from "react-router"
 import Root from "./components/Root"
-import Home from "./components/Home"
-import Projects from "./components/Projects"
-import Education from "./components/Education"
-import Certifications from "./components/Certifications"
-import Resume from "./components/Resume"
 import NotFound from "./components/NotFound"
-import BorrowBuddy from "./components/BorrowBuddy"
-import MunchMatch from "./components/MunchMatch"
-import QuickQR from "./components/QuickQR"
+import {
+  Home,
+  Projects,
+  Education,
+  Certifications,
+  Resume,
+  BorrowBuddy,
+  MunchMatch,
+  QuickQR,
+} from "./lazyPages"
 
 const router = createBrowserRouter([
   {

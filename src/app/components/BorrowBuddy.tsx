@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import { ArrowLeft, ExternalLink, Github, Sparkles } from "lucide-react"
 import AppLink from "./AppLink"
+import PageShell from "./PageShell"
 
 const orbs = [
   {
@@ -98,20 +99,7 @@ const screenshots = [
 
 export default function BorrowBuddy() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[color:var(--bg)]">
-      <div className="vt-bg absolute inset-0 overflow-hidden">
-        {orbs.map((orb, index) => (
-          <motion.div
-            key={index}
-            className={orb.className}
-            animate={orb.animate}
-            transition={{ duration: orb.duration, repeat: Infinity, ease: "easeInOut" }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-[linear-gradient(var(--grid)_1px,transparent_1px),linear-gradient(90deg,var(--grid)_1px,transparent_1px)] bg-[size:100px_100px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]" />
-      </div>
-
-      <div className="vt-content relative z-10 mx-auto max-w-6xl px-5 pb-20 pt-24 sm:px-6 sm:pb-24 sm:pt-32">
+    <PageShell orbs={orbs} maxWidth="max-w-6xl">
         <div className="mb-8 flex items-center gap-3">
           <AppLink
             to="/projects"
@@ -275,7 +263,6 @@ export default function BorrowBuddy() {
             ))}
           </div>
         </div>
-      </div>
-    </div>
+    </PageShell>
   )
 }

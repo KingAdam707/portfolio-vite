@@ -26,9 +26,11 @@ export default function Navigation() {
     window.localStorage.setItem("theme", theme)
   }, [theme])
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(location.pathname)
+  if (location.pathname !== prevPathname) {
+    setPrevPathname(location.pathname)
     setMenuOpen(false)
-  }, [location.pathname])
+  }
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"))
@@ -120,7 +122,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="border-t border-[color:var(--border)] bg-[color:var(--nav)] px-5 py-4 md:hidden sm:px-6"
+            className="border-t border-[color:var(--border)] bg-[color:var(--bg)] px-5 py-4 md:hidden sm:px-6"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => {
