@@ -10,6 +10,7 @@ import {
   BorrowBuddy,
   MunchMatch,
   QuickQR,
+  AlgebraArcade,
 } from "./lazyPages"
 
 const router = createBrowserRouter([
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "projects", element: <Projects /> },
+      { path: "projects/algebraarcade", element: <AlgebraArcade /> },
       { path: "projects/borrowbuddy", element: <BorrowBuddy /> },
       { path: "projects/munchmatch", element: <MunchMatch /> },
       { path: "projects/quickqr", element: <QuickQR /> },

@@ -16,6 +16,16 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Algebra Arcade",
+    description:
+      "A guided algebra practice app built for my younger brother: solve linear equations by choosing a RULE, watch it apply to both sides, and simplify step by step, never a blank equation box.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Vitest"],
+    image: "/screenshots/AlgebraArcade_Home.jpg",
+    github: "https://github.com/KingAdam707/algebra-arcade",
+    live: "https://algebra-arcade.vercel.app",
+    caseStudy: "/projects/algebraarcade",
+  },
+  {
     title: "QuickQR",
     description:
       "Paste a link, get a big scannable QR code instantly. A zero-backend web tool for handing someone a URL across the room — no app needed to scan.",
